@@ -1,0 +1,29 @@
+{
+    "products": [
+        {
+            "name": "gloves",
+            "description": "good to use it",
+            "price": 15
+        },
+        {
+            "name": "gloves",
+            "description": "good to use it",
+            "price": 15
+        },
+        {
+            "name": "gloves",
+            "description": "good to use it",
+            "price": 15
+        },
+        {
+            "name": "gloves",
+            "description": "good to use it",
+            "price": 15
+        },
+        {
+            "name": "gloves",
+            "description": "good to use it",
+            "price": 15
+        }
+    ]
+}

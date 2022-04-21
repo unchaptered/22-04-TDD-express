@@ -1,34 +1,73 @@
 {
-  "name": "express-web",
+  "name": "22-04-TDD-express",
   "version": "1.0.0",
+  "author": "unchaptered",
   "description": "",
-  "main": "index.js",
-  "type": "module",
+  "main": "app.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=prod ./src/app.js",
-    "start:dev": "nodemon cross-env NODE_ENV=dev ./src/app.js",
-    "start:test": "cross-env NODE_ENV=test ./src/app.js"
+    "prestart": "npm run build",
+    "build": "babel src/app.js",
+    "start": "cross-env NODE_ENV=prod babel-node ./dist/app.js",
+    "start:dev": "cross-env NODE_ENV=dev nodemon --exec babel-node ./src/app.js",
+    "start:test": "cross-env NODE_ENV=test babel-node ./src/app.js",
+    "test": "cross-env NODE_ENV=test jest",
+    "test:clear": "cross-env NODE_ENV=test jest --clearCache",
+    "test:vs": "cross-env NODE_ENV=test jest --verbose",
+    "test:watch": "cross-env NODE_ENV=test jest --watch",
+    "test:watch:vs": "cross-env NODE_ENV=test jest --watch --verbose",
+    "test:cov": "cross-env NODE_ENV=test jest --coverage",
+    "test:cov:vs": "cross-env NODE_ENV=test jest --coverage --verbose"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/unchaptered/22-04-TDD-express.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "node",
+    "env",
+    "cross-env",
+    "express",
+    "ECMAScript",
+    "jest"
+  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/unchaptered/express-web/issues"
   },
   "homepage": "https://github.com/unchaptered/express-web#readme",
   "dependencies": {
-    "cross-env": "^7.0.3",
+    "@babel/runtime": "^7.17.9",
+    "@types/jest": "^27.4.1",
+    "babel-plugin-add-module-exports": "^1.0.4",
+    "core-js": "^3.22.0",
     "dotenv": "^16.0.0",
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "mongoose": "^6.3.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.9",
+    "@babel/node": "^7.16.8",
+    "@babel/plugin-proposal-class-properties": "^7.16.7",
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-flow": "^7.16.7",
+    "@babel/preset-react": "^7.16.7",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.13.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^26.1.4",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-watch": "^8.0.0",
+    "faker": "^5.5.3",
     "jest": "^27.5.1",
     "node-mocks-http": "^1.11.0",
     "nodemon": "^2.0.15",
-    "supertest": "^6.2.2"
+    "prettier": "^2.6.2",
+    "superagent": "^7.1.2",
+    "supertest": "^6.2.2",
+    "supertest-as-promised": "^4.0.2"
   }
 }
